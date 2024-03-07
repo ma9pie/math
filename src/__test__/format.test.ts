@@ -1,4 +1,4 @@
-const { numberToString, floor } = require('@/utils');
+import { numberToString, floor } from '../../src/utils';
 
 describe('numberToString test', () => {
   test('', () => {

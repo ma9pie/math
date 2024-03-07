@@ -7,10 +7,6 @@
     /* Modules */
     "module": "esnext",
     "moduleResolution": "node",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
 
     /* Emit */
     "declaration": true,

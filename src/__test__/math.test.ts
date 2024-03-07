@@ -1,4 +1,4 @@
-const { math } = require('@/utils');
+import { math } from '../../src/utils';
 
 describe('math test', () => {
   // Normal

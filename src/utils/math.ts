@@ -2,7 +2,7 @@ import Big from 'big.js';
 
 import { floor } from './format';
 
-type Argument = number | string | BigInt | undefined;
+type Argument = number | string | BigInt | undefined | null;
 
 const validate = (num: Argument) => {
   if (typeof num === 'bigint') {
