@@ -27,11 +27,11 @@ const config = {
       format: 'cjs',
       sourcemap: true,
     },
-    {
-      file: pkg.module,
-      format: 'esm',
-      sourcemap: true,
-    },
+    // {
+    //   file: pkg.module,
+    //   format: 'es',
+    //   sourcemap: true,
+    // },
   ],
 };
 
