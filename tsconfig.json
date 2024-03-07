@@ -16,6 +16,9 @@
     "declaration": true,
     "outDir": "dist",
 
+    /* Interop Constraints */
+    "allowSyntheticDefaultImports": true,
+
     /* Type Checking */
     "strict": true,
 
