@@ -1,9 +1,8 @@
 {
-  "name": "easy-math",
+  "name": "@ma9pie/math",
   "version": "0.0.1",
-  "description": "Easy-to-use math utility",
+  "description": "Simple math utility",
   "keywords": [
-    "easy",
     "simple",
     "math",
     "calc",
@@ -16,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ma9pie/easy-math"
+    "url": "https://github.com/ma9pie/math"
   },
   "license": "MIT",
   "publishConfig": {
