@@ -1,8 +1,7 @@
-import alias from '@rollup/plugin-alias';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import path from 'path';
+import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 import pkg from './package.json';
@@ -14,8 +13,8 @@ const config = {
   plugins: [
     peerDepsExternal(),
     resolve({ extensions }),
-    alias({
-      entries: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+    typescript({
+      exclude: ['**/*.test.ts'],
     }),
     commonjs({
       include: 'node_modules/**',
@@ -27,6 +26,11 @@ const config = {
     }),
   ],
   output: [
+    {
+      file: pkg.main,
+      format: 'cjs',
+      sourcemap: true,
+    },
     {
       file: pkg.module,
       format: 'esm',
