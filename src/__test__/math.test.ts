@@ -1,4 +1,4 @@
-import { math } from '../../src/utils';
+import { math } from '@/utils';
 
 describe('math test', () => {
   // Normal

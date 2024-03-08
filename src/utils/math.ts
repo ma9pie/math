@@ -1,6 +1,6 @@
 import Big from 'big.js';
 
-import { floor } from './format';
+import { floor } from '@/utils';
 
 type Argument = number | string | BigInt | undefined | null;
 

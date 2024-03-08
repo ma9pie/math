@@ -7,9 +7,14 @@
     /* Modules */
     "module": "esnext",
     "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
 
     /* Emit */
     "declaration": true,
+    "emitDeclarationOnly": true,
     "outDir": "dist",
 
     /* Interop Constraints */
@@ -21,6 +26,6 @@
     /* Completeness */
     "skipLibCheck": true
   },
-  "include": ["src"],
-  "exclude": ["**/*.test.ts"]
+  "include": ["src"]
+  // "exclude": ["**/*.test.ts"]
 }

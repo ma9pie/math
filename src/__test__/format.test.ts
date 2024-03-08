@@ -1,4 +1,4 @@
-import { floor, numberToString } from '../../src/utils';
+import { floor, numberToString } from '@/utils';
 
 describe('numberToString test', () => {
   test('', () => {
