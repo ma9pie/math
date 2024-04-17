@@ -38,11 +38,15 @@ import { math } from '@ma9pie/math';
 ```
 You can develop calculation logic simply by using the math function.
 ```
-math(1).add(2).sub(3).value(); // 0
+math(1).add(2).sub(3).value(); // '0'
 ```
-Calculation-related methods can be chained.
+And calculation-related methods can be chained.
 ```
-math(10).add(5).sub(7).mul(2).div(4).value(); // 4
+math(10).add(5).sub(7).mul(2).div(4).value(); // '4'
+```
+Also you can use it like below.
+```
+math(10).add(1,2,3,4).value(); // '20'
 ```
 
 #### value
