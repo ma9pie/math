@@ -31,6 +31,16 @@ export const math = (value: Argument) => {
      */
 
     // Addition
+
+    /**
+     * add
+     * .add(n) => Big
+     * n : number | string | BigInt
+     *
+     * Returns the Big with n added to the current value.
+     *
+     * When n value is invalid, it is calculated as 0.
+     */
     add: function (...args: Argument[]) {
       for (let i = 0; i < args.length; i++) {
         res = res.plus(normalize(args[i]));
@@ -71,8 +81,8 @@ export const math = (value: Argument) => {
     },
 
     // Power
-    pow: function (n: number) {
-      res = res.pow(n);
+    pow: function (arg: Argument) {
+      res = res.pow(Number(normalize(arg)));
       return this;
     },
 
@@ -86,8 +96,7 @@ export const math = (value: Argument) => {
       if (isIncludeInvalidValue(value, arg)) {
         return false;
       }
-      arg = normalize(arg);
-      return res.eq(arg);
+      return res.eq(normalize(arg));
     },
 
     // Greater than equal
@@ -95,8 +104,7 @@ export const math = (value: Argument) => {
       if (isIncludeInvalidValue(value, arg)) {
         return false;
       }
-      arg = normalize(arg);
-      return res.gte(arg);
+      return res.gte(normalize(arg));
     },
 
     // Greater than
@@ -104,8 +112,7 @@ export const math = (value: Argument) => {
       if (isIncludeInvalidValue(value, arg)) {
         return false;
       }
-      arg = normalize(arg);
-      return res.gt(arg);
+      return res.gt(normalize(arg));
     },
 
     // Less than equal
@@ -113,8 +120,7 @@ export const math = (value: Argument) => {
       if (isIncludeInvalidValue(value, arg)) {
         return false;
       }
-      arg = normalize(arg);
-      return res.lte(arg);
+      return res.lte(normalize(arg));
     },
 
     // Less than
@@ -122,8 +128,7 @@ export const math = (value: Argument) => {
       if (isIncludeInvalidValue(value, arg)) {
         return false;
       }
-      arg = normalize(arg);
-      return res.lt(arg);
+      return res.lt(normalize(arg));
     },
 
     // Check if it is zero
