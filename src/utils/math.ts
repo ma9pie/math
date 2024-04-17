@@ -9,37 +9,35 @@ export const math = (value: Argument) => {
 
   return {
     /**
-     * Return value methods
-     * @returns value
+     * [value]
+     * value() => string
+     *
+     * Returns calculated value as string
      */
-
-    // String type value
     value: function (precision?: number) {
       const value = floor(res.valueOf(), precision);
       return value;
     },
 
-    // Number type value
+    /**
+     * [toNumber]
+     * toNumber() => number
+     *
+     * Returns calculated value as number
+     */
     toNumber: function (precision?: number) {
       const value = floor(res.valueOf(), precision);
       return Number(value);
     },
 
     /**
-     * Calulation methods
-     * @returns this
-     */
-
-    // Addition
-
-    /**
-     * add
+     * [add]
      * .add(n) => Big
      * n : number | string | BigInt
      *
-     * Returns the Big with n added to the current value.
+     * Returns the current value added by n.
      *
-     * When n value is invalid, it is calculated as 0.
+     * If the n is invalid, it is treated as 0.
      */
     add: function (...args: Argument[]) {
       for (let i = 0; i < args.length; i++) {
@@ -48,7 +46,15 @@ export const math = (value: Argument) => {
       return this;
     },
 
-    // Subtraction
+    /**
+     * [sub]
+     * .sub(n) => Big
+     * n : number | string | BigInt
+     *
+     * Returns the current value subtracted by n.
+     *
+     * If the n is invalid, it is treated as 0.
+     */
     sub: function (...args: Argument[]) {
       for (let i = 0; i < args.length; i++) {
         res = res.minus(normalize(args[i]));
@@ -56,7 +62,15 @@ export const math = (value: Argument) => {
       return this;
     },
 
-    // Multiplication
+    /**
+     * [mul]
+     * .mul(n) => Big
+     * n : number | string | BigInt
+     *
+     * Returns the current value multiplied by n.
+     *
+     * If the n is invalid, it is treated as 0.
+     */
     mul: function (...args: Argument[]) {
       for (let i = 0; i < args.length; i++) {
         res = res.mul(normalize(args[i]));
@@ -64,7 +78,15 @@ export const math = (value: Argument) => {
       return this;
     },
 
-    //Division
+    /**
+     * [div]
+     * .div(n) => Big
+     * n : number | string | BigInt
+     *
+     * Returns the current value divided by n.
+     *
+     * If the n is invalid, it is treated as 0.
+     */
     div: function (...args: Argument[]) {
       for (let i = 0; i < args.length; i++) {
         res = res.div(normalize(args[i]));
@@ -72,7 +94,12 @@ export const math = (value: Argument) => {
       return this;
     },
 
-    // Absolute
+    /**
+     * [abs]
+     * .abs() => Big
+     *
+     * Returns the absolute current value.
+     */
     abs: function () {
       if (res.lt(0)) {
         res = res.mul(-1);
@@ -80,18 +107,27 @@ export const math = (value: Argument) => {
       return this;
     },
 
-    // Power
+    /**
+     * [pow]
+     * .pow(n) => Big
+     * n : number | string | BigInt
+     *
+     * Returns the current value nth power.
+     *
+     * If the n is invalid, it is treated as 0.
+     */
     pow: function (arg: Argument) {
       res = res.pow(Number(normalize(arg)));
       return this;
     },
 
     /**
-     * Comparison methods
-     * @returns boolean
+     * [eq]
+     * .eq(n) => boolean
+     * n : number | string | BigInt
+     *
+     * Returns whether the current value and n are the same.
      */
-
-    // Equal
     eq: function (arg: Argument) {
       if (isIncludeInvalidValue(value, arg)) {
         return false;
@@ -99,7 +135,13 @@ export const math = (value: Argument) => {
       return res.eq(normalize(arg));
     },
 
-    // Greater than
+    /**
+     * [gt]
+     * .gt(n) => boolean
+     * n : number | string | BigInt
+     *
+     * Returns whether the current value is greater than n.
+     */
     gt: function (arg: Argument) {
       if (isIncludeInvalidValue(value, arg)) {
         return false;
@@ -107,7 +149,13 @@ export const math = (value: Argument) => {
       return res.gt(normalize(arg));
     },
 
-    // Greater than equal
+    /**
+     * [gte]
+     * .gte(n) => boolean
+     * n : number | string | BigInt
+     *
+     * Returns whether the current value is greater than or equal to n.
+     */
     gte: function (arg: Argument) {
       if (isIncludeInvalidValue(value, arg)) {
         return false;
@@ -115,7 +163,13 @@ export const math = (value: Argument) => {
       return res.gte(normalize(arg));
     },
 
-    // Less than
+    /**
+     * [lt]
+     * .lt(n) => boolean
+     * n : number | string | BigInt
+     *
+     * Returns whether the current value is less than n.
+     */
     lt: function (arg: Argument) {
       if (isIncludeInvalidValue(value, arg)) {
         return false;
@@ -123,7 +177,13 @@ export const math = (value: Argument) => {
       return res.lt(normalize(arg));
     },
 
-    // Less than equal
+    /**
+     * [lte]
+     * .lte(n) => boolean
+     * n : number | string | BigInt
+     *
+     * Returns whether the current value is less than or equal to n.
+     */
     lte: function (arg: Argument) {
       if (isIncludeInvalidValue(value, arg)) {
         return false;
@@ -131,7 +191,12 @@ export const math = (value: Argument) => {
       return res.lte(normalize(arg));
     },
 
-    // Check if it is zero
+    /**
+     * [isZero]
+     * .isZero() => boolean
+     *
+     * Returns whether the current value is 0.
+     */
     isZero: function () {
       if (isIncludeInvalidValue(value)) {
         return false;
