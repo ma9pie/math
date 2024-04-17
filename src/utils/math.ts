@@ -21,65 +21,65 @@ export const math = (value: Argument) => {
     },
 
     // Addition
-    add: function (...arg: Argument[]) {
-      for (let i = 0; i < arg.length; i++) {
-        res = res.plus(normalize(arg[i]));
+    add: function (...args: Argument[]) {
+      for (let i = 0; i < args.length; i++) {
+        res = res.plus(normalize(args[i]));
       }
       return this;
     },
 
     // Subtraction
-    sub: function (...arg: Argument[]) {
-      for (let i = 0; i < arg.length; i++) {
-        res = res.minus(normalize(arg[i]));
+    sub: function (...args: Argument[]) {
+      for (let i = 0; i < args.length; i++) {
+        res = res.minus(normalize(args[i]));
       }
       return this;
     },
 
     // Multiplication
-    mul: function (...arg: Argument[]) {
-      for (let i = 0; i < arg.length; i++) {
-        res = res.mul(normalize(arg[i]));
+    mul: function (...args: Argument[]) {
+      for (let i = 0; i < args.length; i++) {
+        res = res.mul(normalize(args[i]));
       }
       return this;
     },
 
     //Division
-    div: function (...arg: Argument[]) {
-      for (let i = 0; i < arg.length; i++) {
-        res = res.div(normalize(arg[i]));
+    div: function (...args: Argument[]) {
+      for (let i = 0; i < args.length; i++) {
+        res = res.div(normalize(args[i]));
       }
       return this;
     },
 
     // Equal
-    eq: function (num: Argument) {
-      num = normalize(num);
-      return res.eq(num);
+    eq: function (arg: Argument) {
+      arg = normalize(arg);
+      return res.eq(arg);
     },
 
     // Greater than equal
-    gte: function (num: Argument) {
-      num = normalize(num);
-      return res.gte(num);
+    gte: function (arg: Argument) {
+      arg = normalize(arg);
+      return res.gte(arg);
     },
 
     // Greater than
-    gt: function (num: Argument) {
-      num = normalize(num);
-      return res.gt(num);
+    gt: function (arg: Argument) {
+      arg = normalize(arg);
+      return res.gt(arg);
     },
 
     // Less than equal
-    lte: function (num: Argument) {
-      num = normalize(num);
-      return res.lte(num);
+    lte: function (arg: Argument) {
+      arg = normalize(arg);
+      return res.lte(arg);
     },
 
     // Less than
-    lt: function (num: Argument) {
-      num = normalize(num);
-      return res.lt(num);
+    lt: function (arg: Argument) {
+      arg = normalize(arg);
+      return res.lt(arg);
     },
 
     // Absolute
