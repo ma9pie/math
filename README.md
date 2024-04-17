@@ -14,13 +14,16 @@ When using precision calculation libraries such as big.js, bignumber.js, and dec
 And the value 1e-7 is displayed as an exponential expression, such as '1e-7', not '0.0000001'.
 
 To improve these points and make it easier to use, I developed this math utility library.
-```
+
+```javascript
 console.log(new Big(1e-7).valueOf()); // '1e-7'
 console.log(math(1e-7).value()); // '0.0000001'
 ```
 
+
+
 ### 📦 Install
-```
+```bash
 npm i @ma9pie/math
 ```
 
@@ -33,26 +36,32 @@ npm i @ma9pie/math
 
 
 ### 🕹 Use
-```
+```javascript
 import { math } from '@ma9pie/math';
 ```
+
 You can develop calculation logic simply by using the math function.
-```
+
+```javascript
 math(1).add(2).sub(3).value(); // '0'
+
 ```
 And calculation-related methods can be chained.
-```
+
+```javascript
 math(10).add(5).sub(7).mul(2).div(4).value(); // '4'
 ```
 Also you can use it like below.
-```
+
+```javascript
 math(10).add(1,2,3,4).value(); // '20'
 ```
 
 #### value
 value() => string
 returns calculated value as string
-```
+
+```javascript
 math(1000).value(); // '1000'
 math('1e7').value(); // '10000000'
 math(1e-7).value(); // '0.0000001'
@@ -61,7 +70,8 @@ math(1e-7).value(); // '0.0000001'
 #### toNumber
 toNumber() => number
 returns calculated value as number
-```
+
+```javascript
 math(1000).toNumber(); // 1000
 math('1e7').toNumber(); // 10000000
 math(1e-7).toNumber(); // 1e-7
@@ -73,7 +83,7 @@ n : number | string | BigInt
 returns the current value added by n.
 <i>if the n is invalid, it is treated as 0.</i>
 
-```
+```javascript
 0.1 + 0.2, // 0.30000000000000004
 math(0.1).add(0.2).value(); // '0.3'
 math(1).add(2).add(3).value(); // '6'
@@ -85,7 +95,8 @@ math(1).add(2, 3, 4).value(); // '10'
 n : number | string | BigInt
 returns the current value subtracted by n.
 <i>if the n is invalid, it is treated as 0.</i>
-```
+
+```javascript
 0.3 - 0.1, // 0.19999999999999998
 math(0.3).sub(0.1).value(); // '0.2'
 math(1).sub(2).sub(3).value(); // '-4'
@@ -97,7 +108,8 @@ math(1).sub(2, 3, 4).value(); // '-8'
 n : number | string | BigInt
 returns the current value multiplied by n.
 <i>if the n is invalid, it is treated as 0.</i>
-```
+
+```javascript
 0.6 * 3, // 1.7999999999999998
 math(0.6).mul(3).value(); // '1.8'
 math(2).mul(2).mul(2).value(); // '8'
@@ -109,7 +121,8 @@ math(2).mul(2, 2, 2).value(); // '16'
 n : number | string | BigInt
 returns the current value divided by n.
 <i>if the n is invalid, it is treated as 0.</i>
-```
+
+```javascript
 355 / 113, // 3.1415929203539825
 math(355).div(113).value(); // '3.141592920353982300'
 math(10).div(3).value(); // '3.333333333333333333'
@@ -119,7 +132,7 @@ math(1000).div(10, 10, 10).value(); // '1'
 #### abs
 .abs() => Big
 returns the absolute current value.
-```
+```javascript
 math(-0.8).abs().value(); // '0.8'
 ```
 
@@ -128,7 +141,8 @@ math(-0.8).abs().value(); // '0.8'
 n : number | string | BigInt
 returns the current value nth power.
 <i>if the n is invalid, it is treated as 0.</i>
-```
+
+```javascript
 0.7 ** 2, // 0.48999999999999994
 Math.pow(0.7, 2); // 0.48999999999999994
 math(0.7).pow(2).value(); // '0.49'
@@ -138,7 +152,8 @@ math(0.7).pow(2).value(); // '0.49'
 .eq(n) => boolean
 n : number | string | BigInt
 returns whether the current value and n are the same.
-```
+
+```javascript
 0.1 + 0.2 === 0.3, // false
 math(0.1).add(0.2).eq(0.3); // true
 math('0.0000001').eq(1e-7); // true
@@ -149,7 +164,8 @@ math(1e7).eq(10000000); // true
 .gt(n) => boolean
 n : number | string | BigInt
 returns whether the current value is greater than n.
-```
+
+```javascript
 0.1 + 0.2 > 0.3, // true
 math(0.1).add(0.2).gt(0.3); // false
 ```
@@ -158,7 +174,8 @@ math(0.1).add(0.2).gt(0.3); // false
 .gte(n) => boolean
 n : number | string | BigInt
 returns whether the current value is greater than or equal to n.
-```
+
+```javascript
 0.1 + 0.2 <= 0.3, // false
 math(0.1).add(0.2).gte(0.3); // true
 ```
@@ -167,7 +184,8 @@ math(0.1).add(0.2).gte(0.3); // true
 .lt(n) => boolean
 n : number | string | BigInt
 returns whether the current value is less than n.
-```
+
+```javascript
 0.1 + 0.2 > 0.3, // true
 math(0.1).add(0.2).lt(0.3); // false
 ```
@@ -176,7 +194,8 @@ math(0.1).add(0.2).lt(0.3); // false
 .lte(n) => boolean
 n : number | string | BigInt
 returns whether the current value is less than or equal to n.
-```
+
+```javascript
 0.1 + 0.2 <= 0.3, // false
 math(0.1).add(0.2).lte(0.3); // true
 ```
@@ -184,7 +203,8 @@ math(0.1).add(0.2).lte(0.3); // true
 #### isZero
 .isZero() => boolean
 returns whether the current value is 0.
-```
+
+```javascript
 math(0).isZero(); // true
 math(-0).isZero(); // true
 math(0.0).isZero(); // true
@@ -196,6 +216,6 @@ math(Number.MAX_SAFE_INTEGER).isZero(); // false
 
 
 ### 🔍 Test
-```
+```bash
 npm run test
 ```
