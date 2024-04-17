@@ -95,5 +95,10 @@ export const math = (value: Argument) => {
       res = res.pow(n);
       return this;
     },
+
+    // Check if it is zero
+    isZero: function () {
+      return res.eq(0);
+    },
   };
 };

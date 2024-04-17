@@ -19,4 +19,9 @@ describe('math eq method test', () => {
   t(-0.00000000001, '-0.00000000001', true);
   t(BigInt(1e7), '1e7', true);
   t(BigInt(-1e6), '-1000000', true);
+  t('', 0, true);
+  t(' ', 0, true);
+  t('test', 0, true);
+  t(null, 0, true);
+  t(undefined, 0, true);
 });
