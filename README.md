@@ -58,8 +58,8 @@ math(10).add(1,2,3,4).value(); // '20'
 ```
 
 #### value
-value() => string
-returns calculated value as string
+value() => string  
+returns calculated value as string  
 
 ```javascript
 math(1000).value(); // '1000'
@@ -68,8 +68,8 @@ math(1e-7).value(); // '0.0000001'
 ```
 
 #### toNumber
-toNumber() => number
-returns calculated value as number
+toNumber() => number  
+returns calculated value as number  
 
 ```javascript
 math(1000).toNumber(); // 1000
@@ -78,10 +78,10 @@ math(1e-7).toNumber(); // 1e-7
 ```
 
 #### add
-.add(n) => Big
-n : number | string | BigInt
-returns the current value added by n.
-<i>if the n is invalid, it is treated as 0.</i>
+.add(n) => Big  
+n : number | string | BigInt  
+returns the current value added by n.  
+<i>if the n is invalid, it is treated as 0.</i>  
 
 ```javascript
 0.1 + 0.2, // 0.30000000000000004
@@ -91,10 +91,10 @@ math(1).add(2, 3, 4).value(); // '10'
 ```
 
 #### sub
-.sub(n) => Big
-n : number | string | BigInt
-returns the current value subtracted by n.
-<i>if the n is invalid, it is treated as 0.</i>
+.sub(n) => Big  
+n : number | string | BigInt  
+returns the current value subtracted by n.  
+<i>if the n is invalid, it is treated as 0.</i>  
 
 ```javascript
 0.3 - 0.1, // 0.19999999999999998
@@ -104,10 +104,10 @@ math(1).sub(2, 3, 4).value(); // '-8'
 ```
 
 #### mul
-.mul(n) => Big
-n : number | string | BigInt
-returns the current value multiplied by n.
-<i>if the n is invalid, it is treated as 0.</i>
+.mul(n) => Big  
+n : number | string | BigInt  
+returns the current value multiplied by n.  
+<i>if the n is invalid, it is treated as 0.</i>  
 
 ```javascript
 0.6 * 3, // 1.7999999999999998
@@ -117,10 +117,10 @@ math(2).mul(2, 2, 2).value(); // '16'
 ```
 
 #### div
-.div(n) => Big
-n : number | string | BigInt
-returns the current value divided by n.
-<i>if the n is invalid, it is treated as 0.</i>
+.div(n) => Big  
+n : number | string | BigInt  
+returns the current value divided by n.  
+<i>if the n is invalid, it is treated as 0.</i>  
 
 ```javascript
 355 / 113, // 3.1415929203539825
@@ -130,17 +130,18 @@ math(1000).div(10, 10, 10).value(); // '1'
 ```
 
 #### abs
-.abs() => Big
-returns the absolute current value.
+.abs() => Big  
+returns the absolute current value.  
+
 ```javascript
 math(-0.8).abs().value(); // '0.8'
 ```
 
 #### pow
-.pow(n) => Big
-n : number | string | BigInt
-returns the current value nth power.
-<i>if the n is invalid, it is treated as 0.</i>
+.pow(n) => Big  
+n : number | string | BigInt  
+returns the current value nth power.  
+<i>if the n is invalid, it is treated as 0.</i>  
 
 ```javascript
 0.7 ** 2, // 0.48999999999999994
@@ -149,9 +150,9 @@ math(0.7).pow(2).value(); // '0.49'
 ```
 
 #### eq
-.eq(n) => boolean
-n : number | string | BigInt
-returns whether the current value and n are the same.
+.eq(n) => boolean  
+n : number | string | BigInt  
+returns whether the current value and n are the same.  
 
 ```javascript
 0.1 + 0.2 === 0.3, // false
@@ -161,9 +162,9 @@ math(1e7).eq(10000000); // true
 ```
 
 #### gt
-.gt(n) => boolean
-n : number | string | BigInt
-returns whether the current value is greater than n.
+.gt(n) => boolean  
+n : number | string | BigInt  
+returns whether the current value is greater than n.  
 
 ```javascript
 0.1 + 0.2 > 0.3, // true
@@ -171,9 +172,9 @@ math(0.1).add(0.2).gt(0.3); // false
 ```
 
 #### gte
-.gte(n) => boolean
-n : number | string | BigInt
-returns whether the current value is greater than or equal to n.
+.gte(n) => boolean  
+n : number | string | BigInt  
+returns whether the current value is greater than or equal to n.  
 
 ```javascript
 0.1 + 0.2 <= 0.3, // false
@@ -181,9 +182,9 @@ math(0.1).add(0.2).gte(0.3); // true
 ```
 
 #### lt
-.lt(n) => boolean
-n : number | string | BigInt
-returns whether the current value is less than n.
+.lt(n) => boolean  
+n : number | string | BigInt  
+returns whether the current value is less than n.  
 
 ```javascript
 0.1 + 0.2 > 0.3, // true
@@ -191,9 +192,9 @@ math(0.1).add(0.2).lt(0.3); // false
 ```
 
 #### lte
-.lte(n) => boolean
-n : number | string | BigInt
-returns whether the current value is less than or equal to n.
+.lte(n) => boolean  
+n : number | string | BigInt  
+returns whether the current value is less than or equal to n.  
 
 ```javascript
 0.1 + 0.2 <= 0.3, // false
@@ -201,8 +202,8 @@ math(0.1).add(0.2).lte(0.3); // true
 ```
 
 #### isZero
-.isZero() => boolean
-returns whether the current value is 0.
+.isZero() => boolean  
+returns whether the current value is 0.  
 
 ```javascript
 math(0).isZero(); // true
