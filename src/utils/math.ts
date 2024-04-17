@@ -1,13 +1,18 @@
 import Big from 'big.js';
 
 import { Argument } from '@/types';
-import { floor, normalize } from '@/utils';
+import { floor, isIncludeInvalidValue, isInvalidNum, normalize } from '@/utils';
 
 export const math = (value: Argument) => {
   const normalizedValue = normalize(value);
   let res = new Big(normalizedValue);
 
   return {
+    /**
+     * Return value methods
+     * @returns value
+     */
+
     // String type value
     value: function (precision?: number) {
       const value = floor(res.valueOf(), precision);
@@ -19,6 +24,11 @@ export const math = (value: Argument) => {
       const value = floor(res.valueOf(), precision);
       return Number(value);
     },
+
+    /**
+     * Calulation methods
+     * @returns this
+     */
 
     // Addition
     add: function (...args: Argument[]) {
@@ -52,36 +62,6 @@ export const math = (value: Argument) => {
       return this;
     },
 
-    // Equal
-    eq: function (arg: Argument) {
-      arg = normalize(arg);
-      return res.eq(arg);
-    },
-
-    // Greater than equal
-    gte: function (arg: Argument) {
-      arg = normalize(arg);
-      return res.gte(arg);
-    },
-
-    // Greater than
-    gt: function (arg: Argument) {
-      arg = normalize(arg);
-      return res.gt(arg);
-    },
-
-    // Less than equal
-    lte: function (arg: Argument) {
-      arg = normalize(arg);
-      return res.lte(arg);
-    },
-
-    // Less than
-    lt: function (arg: Argument) {
-      arg = normalize(arg);
-      return res.lt(arg);
-    },
-
     // Absolute
     abs: function () {
       if (res.lt(0)) {
@@ -96,8 +76,61 @@ export const math = (value: Argument) => {
       return this;
     },
 
+    /**
+     * Comparison methods
+     * @returns boolean
+     */
+
+    // Equal
+    eq: function (arg: Argument) {
+      if (isIncludeInvalidValue(value, arg)) {
+        return false;
+      }
+      arg = normalize(arg);
+      return res.eq(arg);
+    },
+
+    // Greater than equal
+    gte: function (arg: Argument) {
+      if (isIncludeInvalidValue(value, arg)) {
+        return false;
+      }
+      arg = normalize(arg);
+      return res.gte(arg);
+    },
+
+    // Greater than
+    gt: function (arg: Argument) {
+      if (isIncludeInvalidValue(value, arg)) {
+        return false;
+      }
+      arg = normalize(arg);
+      return res.gt(arg);
+    },
+
+    // Less than equal
+    lte: function (arg: Argument) {
+      if (isIncludeInvalidValue(value, arg)) {
+        return false;
+      }
+      arg = normalize(arg);
+      return res.lte(arg);
+    },
+
+    // Less than
+    lt: function (arg: Argument) {
+      if (isIncludeInvalidValue(value, arg)) {
+        return false;
+      }
+      arg = normalize(arg);
+      return res.lt(arg);
+    },
+
     // Check if it is zero
     isZero: function () {
+      if (isIncludeInvalidValue(value)) {
+        return false;
+      }
       return res.eq(0);
     },
   };

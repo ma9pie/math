@@ -25,9 +25,9 @@ describe('math isZero method test', () => {
   t(BigInt(0), true);
   t(BigInt(-0), true);
   t(BigInt('0'), true);
-  t('', true);
-  t(' ', true);
-  t('test', true);
-  t(null, true);
-  t(undefined, true);
+  t('', false);
+  t(' ', false);
+  t('test', false);
+  t(null, false);
+  t(undefined, false);
 });

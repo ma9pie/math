@@ -19,3 +19,17 @@ export const isInvalidNum = (num: Argument) => {
 
   return isNaN(Number(num));
 };
+
+/**
+ * Check if contains invalid values?
+ * @returns boolean
+ */
+export const isIncludeInvalidValue = (...args: Argument[]) => {
+  let check = false;
+  args.map((arg) => {
+    if (isInvalidNum(arg)) {
+      check = true;
+    }
+  });
+  return check;
+};
