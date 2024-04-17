@@ -21,4 +21,7 @@ describe('math value method test', () => {
   t(BigInt(3), '3');
   t(BigInt(-3), '-3');
   t(BigInt(0), '0');
+  t(Infinity, '0');
+  t(Number.MAX_SAFE_INTEGER, '9007199254740991');
+  t(Number.MIN_SAFE_INTEGER, '-9007199254740991');
 });

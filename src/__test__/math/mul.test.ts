@@ -32,6 +32,17 @@ describe('math mul method test', () => {
   t('-123.99999', '-123.99999', '15375.9975200001');
   t('124', '124', '15376');
   t('27.258901', '20.529702', '559.617114377502');
+  t(Infinity, Number.MAX_SAFE_INTEGER, '0');
+  t(
+    Number.MAX_SAFE_INTEGER,
+    Number.MAX_SAFE_INTEGER,
+    '81129638414606663681390495662081'
+  );
+  t(
+    Number.MIN_SAFE_INTEGER,
+    Number.MIN_SAFE_INTEGER,
+    '81129638414606663681390495662081'
+  );
 
   t = function (
     numA: Argument,

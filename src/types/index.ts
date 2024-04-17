@@ -1,1 +1,1 @@
-export type Argument = number | string | BigInt | undefined | null;
+export type Argument = number | string | BigInt | null | undefined;

@@ -99,14 +99,6 @@ export const math = (value: Argument) => {
       return res.eq(normalize(arg));
     },
 
-    // Greater than equal
-    gte: function (arg: Argument) {
-      if (isIncludeInvalidValue(value, arg)) {
-        return false;
-      }
-      return res.gte(normalize(arg));
-    },
-
     // Greater than
     gt: function (arg: Argument) {
       if (isIncludeInvalidValue(value, arg)) {
@@ -115,12 +107,12 @@ export const math = (value: Argument) => {
       return res.gt(normalize(arg));
     },
 
-    // Less than equal
-    lte: function (arg: Argument) {
+    // Greater than equal
+    gte: function (arg: Argument) {
       if (isIncludeInvalidValue(value, arg)) {
         return false;
       }
-      return res.lte(normalize(arg));
+      return res.gte(normalize(arg));
     },
 
     // Less than
@@ -129,6 +121,14 @@ export const math = (value: Argument) => {
         return false;
       }
       return res.lt(normalize(arg));
+    },
+
+    // Less than equal
+    lte: function (arg: Argument) {
+      if (isIncludeInvalidValue(value, arg)) {
+        return false;
+      }
+      return res.lte(normalize(arg));
     },
 
     // Check if it is zero

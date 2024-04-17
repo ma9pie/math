@@ -27,4 +27,7 @@ describe('math gt method test', () => {
   t(BigInt(15), 16, false);
   t(BigInt(0), BigInt(-999), true);
   t(1001, BigInt(1000), true);
+  t(Infinity, Number.MAX_SAFE_INTEGER, false);
+  t(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, false);
+  t(Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER, true);
 });

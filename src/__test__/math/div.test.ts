@@ -30,7 +30,9 @@ describe('math div method test', () => {
   t('0.157866730501019143', '777.245032', '0.00020311063307126953');
   t('1.0003767627176685', 3.90169139033e-7, '2563956.66042940912916700339');
   t('5234.6942385637', '34.84190235278222', '150.24134404491537551684');
-  t(10, BigInt(3), '3.33333333333333333333');
+  t(Infinity, 1, '0');
+  t(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, '1');
+  t(Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER, '-1');
 
   t = function (
     numA: Argument,

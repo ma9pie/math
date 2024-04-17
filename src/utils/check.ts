@@ -5,16 +5,23 @@ import { Argument } from '@/types';
  * @returns boolean
  */
 export const isInvalidNum = (num: Argument) => {
-  if (num === undefined || num === null || num === '') {
+  if (num === null || num === undefined || num === '') {
     return true;
   }
 
-  if (typeof num === 'string' && num.trim() === '') {
-    return true;
-  }
-
-  if (typeof num === 'bigint') {
-    return false;
+  switch (typeof num) {
+    case 'number':
+      if (num === Infinity) {
+        return true;
+      }
+      break;
+    case 'string':
+      if (num.trim() === '') {
+        return true;
+      }
+      break;
+    case 'bigint':
+      return false;
   }
 
   return isNaN(Number(num));

@@ -19,4 +19,7 @@ describe('math abs method test', () => {
   t(BigInt(-9000), '9000');
   t(BigInt(-0), '0');
   t(BigInt(-333), '333');
+  t(Infinity, '0');
+  t(Number.MAX_SAFE_INTEGER, '9007199254740991');
+  t(Number.MIN_SAFE_INTEGER, '9007199254740991');
 });

@@ -27,4 +27,7 @@ describe('math lt method test', () => {
   t(BigInt(0), 0.1, true);
   t(BigInt(0), '0', false);
   t(BigInt(1), 1, false);
+  t(Infinity, Number.MAX_SAFE_INTEGER, false);
+  t(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, false);
+  t(Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, true);
 });

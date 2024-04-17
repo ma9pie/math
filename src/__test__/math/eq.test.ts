@@ -26,4 +26,7 @@ describe('math eq method test', () => {
   t(null, 0, false);
   t(undefined, 0, false);
   t(null, undefined, false);
+  t(Infinity, Infinity, false);
+  t(Number.MIN_SAFE_INTEGER, Number.MIN_SAFE_INTEGER, true);
+  t(Number.MAX_SAFE_INTEGER, Infinity, false);
 });

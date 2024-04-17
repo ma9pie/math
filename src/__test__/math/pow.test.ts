@@ -26,4 +26,6 @@ describe('math pow method test', () => {
   t(2, 'test', '1');
   t(2, null, '1');
   t(2, undefined, '1');
+  t(2, Infinity, '1');
+  t(Number.MAX_SAFE_INTEGER, 2, '81129638414606663681390495662081');
 });

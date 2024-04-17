@@ -22,6 +22,9 @@ describe('math sub method test', () => {
   t(undefined, 1, '-1');
   t(null, 1, '-1');
   t(10, BigInt(3), '7');
+  t(10, Infinity, '10');
+  t(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, '0');
+  t(Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER, '18014398509481982');
 
   t = function (
     numA: Argument,

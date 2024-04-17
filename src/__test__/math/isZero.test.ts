@@ -30,4 +30,7 @@ describe('math isZero method test', () => {
   t('test', false);
   t(null, false);
   t(undefined, false);
+  t(Infinity, false);
+  t(Number.MAX_SAFE_INTEGER, false);
+  t(Number.MIN_SAFE_INTEGER, false);
 });

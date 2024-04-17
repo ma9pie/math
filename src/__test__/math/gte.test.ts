@@ -26,4 +26,7 @@ describe('math gte method test', () => {
   t(1e7, 1e7, true);
   t(BigInt(15), 16, false);
   t(BigInt(0), -1, true);
+  t(Infinity, Number.MAX_SAFE_INTEGER, false);
+  t(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, true);
+  t(Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER, true);
 });

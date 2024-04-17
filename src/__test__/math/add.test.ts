@@ -22,6 +22,9 @@ describe('math add method test', () => {
   t(1, null, '1');
   t('0.155062399728289', 0.1589, '0.313962399728289');
   t('999999999', '-0.000000000000000001', '999999998.999999999999999999');
+  t(Infinity, Number.MIN_SAFE_INTEGER, '-9007199254740991');
+  t(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, '18014398509481982');
+  t(Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER, '0');
 
   t = function (
     numA: Argument,
