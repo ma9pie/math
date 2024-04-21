@@ -29,10 +29,10 @@ npm i @ma9pie/math
 
 
 ### ✨ Features
-- Simple API
-- Integer and floating point
-- Rest parameters
-- Test code
+- Easy-to-use API  
+- Supports integer and floating point calculations   
+- Rest parameters are available for added flexibility  
+- Enhanced accuracy ensured through test code  
 
 
 ### 🕹 Use
