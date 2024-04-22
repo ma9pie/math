@@ -40,21 +40,23 @@ npm i @ma9pie/math
 import { math } from '@ma9pie/math';
 ```
 
-You can develop calculation logic simply by using the math function.
+You can develop calculation logic simply by using the math function. And calculation-related methods can be chained.
 
 ```javascript
-math(1).add(2).sub(3).value(); // '0'
-
+math(10).add(1).add(2).add(3).add(4).value(); // '20'
 ```
-And calculation-related methods can be chained.
 
-```javascript
-math(10).add(5).sub(7).mul(2).div(4).value(); // '4'
-```
-Also you can use it like below.
+And you can pass values using Rest parameters.
 
 ```javascript
 math(10).add(1,2,3,4).value(); // '20'
+```
+
+If you want to round off specific digits, you can use the following.
+
+
+```javascript
+math(1).add(0.123456).value(2); // '1.12'
 ```
 
 #### value
