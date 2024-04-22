@@ -24,4 +24,15 @@ describe('math value method test', () => {
   t(Infinity, '0');
   t(Number.MAX_SAFE_INTEGER, '9007199254740991');
   t(Number.MIN_SAFE_INTEGER, '-9007199254740991');
+
+  t = function (num: Argument, precision: number, expected: string) {
+    test(createTestName(arguments), () => {
+      expect(math(num).value(precision)).toEqual(expected);
+    });
+  };
+
+  t(0, 10, '0');
+  t(0.000000001, 1, '0.0');
+  t(0.123123, 3, '0.123');
+  t(1000, 3, '1000');
 });
