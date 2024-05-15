@@ -35,7 +35,7 @@ npm i @ma9pie/math
 - Enhanced accuracy ensured through test code  
 
 
-### 🕹 Use
+### 👨‍💻 Use
 ```javascript
 import { math } from '@ma9pie/math';
 ```
