@@ -2,7 +2,7 @@
 A simple and easy-to-use mathematical calculation utility package.
 
 [npm-url]: https://www.npmjs.com/package/@ma9pie/math
-[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
+[license-image]: https://img.shields.io/badge/license-MIT-red.svg
 [npm-version-image]: https://img.shields.io/npm/v/@ma9pie/math.svg
 [npm-downloads-image]: https://img.shields.io/npm/dt/@ma9pie/math.svg
 
