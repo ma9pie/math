@@ -6,7 +6,7 @@ A simple and easy-to-use mathematical calculation utility package.
 [npm-version-image]: https://img.shields.io/npm/v/@ma9pie/math.svg
 [npm-downloads-image]: https://img.shields.io/npm/dt/@ma9pie/math.svg
 
-[![][license-image]][npm-url] [![][npm-version-image]][npm-url] [![][npm-downloads-image]][npm-url]
+[![license-image]][npm-url] [![npm-version-image]][npm-url] [![npm-downloads-image]][npm-url]
 
 ### 🤔 Reason for development
 When using precision calculation libraries such as big.js, bignumber.js, and decimals.js, we must create a constructor function with the new operator every time.
@@ -222,3 +222,9 @@ math(Number.MAX_SAFE_INTEGER).isZero(); // false
 ```bash
 npm run test
 ```
+
+### 🤝 Contributing 
+Thank you for your interest in the Lite UI project. Your contributions are always welcome.
+
+### 📜 License
+[MIT](https://choosealicense.com/licenses/mit/)
