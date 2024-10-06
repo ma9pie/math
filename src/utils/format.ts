@@ -39,9 +39,11 @@ export const numberToString = (num: Argument) => {
  * floor(0.1234,2) => '0.12'
  */
 export const floor = (num: Argument, precision?: number) => {
-  const value = numberToString(num);
-  let [integer, digits] = value.split('.');
-  if (precision === 0) return integer;
-  digits = digits && precision ? digits.slice(0, precision) : digits;
-  return digits === undefined ? integer : `${integer}.${digits}`;
+  const parts = numberToString(num);
+  let [integer, decimal] = parts.split('.');
+  if (!decimal || precision === 0) {
+    return integer;
+  }
+  decimal = decimal && precision ? decimal.slice(0, precision) : decimal;
+  return `${integer}.${decimal}`;
 };
