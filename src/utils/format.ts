@@ -47,3 +47,32 @@ export const floor = (num: Argument, precision?: number) => {
   decimal = decimal && precision ? decimal.slice(0, precision) : decimal;
   return `${integer}.${decimal}`;
 };
+
+/**
+ * Add comma
+ * 1000000 => "1,000,000"
+ */
+export const comma = (num: Argument): string => {
+  const value = numberToString(num).split('.');
+  value[0] = value[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+  if (value[1] && Number(value[1]) !== 0) {
+    return value.join('.');
+  }
+  return value[0];
+};
+
+/**
+ * Remove comma
+ * "1,000,000" => "1000000"
+ */
+export const decomma = (num: Argument) => {
+  if (!num) {
+    return '0';
+  }
+  const value = num.toString().replace(/,/g, '').trim();
+  if (isNaN(Number(value))) {
+    return '0';
+  }
+  return new Big(value).toFixed();
+};

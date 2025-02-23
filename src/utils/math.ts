@@ -1,7 +1,7 @@
 import Big from 'big.js';
 
 import { Argument } from '@/types';
-import { floor, isIncludeInvalidValue, isInvalidNum, normalize } from '@/utils';
+import { floor, isIncludeInvalidValue, normalize } from '@/utils';
 
 export const math = (value: Argument) => {
   const normalizedValue = normalize(value);
@@ -15,7 +15,7 @@ export const math = (value: Argument) => {
      * Returns calculated value as string
      */
     value: function (precision?: number) {
-      const value = floor(res.valueOf(), precision);
+      const value = floor(res.toFixed(), precision);
       return value;
     },
 
@@ -26,7 +26,7 @@ export const math = (value: Argument) => {
      * Returns calculated value as number
      */
     toNumber: function (precision?: number) {
-      const value = floor(res.valueOf(), precision);
+      const value = floor(res.toFixed(), precision);
       return Number(value);
     },
 
